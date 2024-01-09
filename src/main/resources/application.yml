@@ -1,1 +1,16 @@
+spring:
+  main:
+    web-application-type: none
+  profiles:
+    active: default
+  data:
+    redis:
+      host: redis
+      port: 6379
 
+redis-stream:
+  key: test-stream
+  group: default
+  pod-info-key-prefix: "TestConsumer"
+  concurrency: 5
+  random-ack: true

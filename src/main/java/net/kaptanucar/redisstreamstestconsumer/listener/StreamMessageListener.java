@@ -5,12 +5,12 @@ import org.springframework.data.redis.connection.stream.MapRecord;
 import org.springframework.data.redis.connection.stream.RecordId;
 import org.springframework.data.redis.stream.StreamListener;
 
-public abstract class StreamObjectListener<T> implements StreamListener<String, MapRecord<String, String, String>> {
+public abstract class StreamMessageListener<T> implements StreamListener<String, MapRecord<String, String, String>> {
 
     protected final ObjectMapper objectMapper;
     private final Class<T> clazz;
 
-    public StreamObjectListener(ObjectMapper objectMapper, Class<T> clazz) {
+    public StreamMessageListener(ObjectMapper objectMapper, Class<T> clazz) {
         this.objectMapper = objectMapper;
         this.clazz = clazz;
     }
